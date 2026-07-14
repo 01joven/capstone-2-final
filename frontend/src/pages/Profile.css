@@ -1,0 +1,51 @@
+.profile-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.profile-form,
+.profile-stats {
+  padding: 28px;
+}
+
+.profile-form h3,
+.profile-stats h3 {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.activity-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activity-badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg);
+  border-radius: 10px;
+}
+
+.badge-icon {
+  font-size: 1.8rem;
+}
+
+.activity-badge h4 {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.activity-badge p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+}

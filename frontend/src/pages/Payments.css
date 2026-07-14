@@ -1,0 +1,44 @@
+.payment-checkout {
+  padding: 24px;
+  margin-bottom: 28px;
+  border-left: 4px solid var(--accent);
+}
+
+.payment-checkout h3 {
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.payment-amount {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 12px 0;
+}
+
+.payments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.payment-item h3 {
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.payment-item p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.payment-item-right {
+  text-align: right;
+}

@@ -1,0 +1,80 @@
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar-brand {
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-brand h2 {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.sidebar-brand p {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 16px 0;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.sidebar-link.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-right: 3px solid var(--accent);
+}
+
+.sidebar-icon {
+  font-size: 1.1rem;
+}
+
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-user {
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.sidebar-logout {
+  width: 100%;
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  font-size: 0.85rem;
+  padding: 8px;
+}
+
+.sidebar-logout:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: white;
+}
