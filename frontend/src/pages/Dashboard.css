@@ -1,63 +1,59 @@
 .dashboard-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
   margin-bottom: 36px;
 }
 
 .stat-card {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 24px;
+  gap: 18px;
+  padding: 28px;
 }
 
 .stat-icon {
-  font-size: 2rem;
+  font-size: 2.4rem;
 }
 
 .stat-card h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--primary);
+  margin-bottom: 6px;
 }
 
 .stat-card p {
-  color: var(--text-light);
-  font-size: 0.9rem;
-}
-
-.section-title {
-  font-size: 1.2rem;
-  color: var(--primary);
-  margin-bottom: 16px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 .quick-actions {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
 }
 
 .action-card {
-  padding: 24px;
-  text-align: center;
-  transition: transform 0.2s;
+  padding: 28px;
+  text-align: left;
+  transition: transform 0.2s ease;
 }
 
 .action-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
 }
 
 .action-card span {
-  font-size: 2rem;
+  font-size: 2.1rem;
 }
 
 .action-card h3 {
-  margin: 10px 0 6px;
-  color: var(--primary);
+  margin: 14px 0 10px;
+  color: var(--secondary);
 }
 
 .action-card p {
-  font-size: 0.85rem;
-  color: var(--text-light);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.75;
 }

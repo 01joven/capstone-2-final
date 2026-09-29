@@ -53,7 +53,7 @@ const ReservationDetail = () => {
         {memorial ? (
           <div className="reservation-layout">
             <div className="reservation-info card">
-              <img src={memorial.image_url} alt={memorial.name} />
+              <img src={memorial.image_url || 'https://via.placeholder.com/600x320?text=Memorial'} alt={memorial.name} />
               <div className="reservation-info-body">
                 <span className="badge">{memorial.category}</span>
                 <h2>{memorial.name}</h2>
@@ -77,8 +77,8 @@ const ReservationDetail = () => {
                 <input type="date" value={reservationDate} onChange={(e) => setReservationDate(e.target.value)} required />
               </div>
               {error && <p className="error-msg">{error}</p>}
-              {success && <p style={{ color: 'var(--success)' }}>Reservation created! Redirecting to payment...</p>}
-              <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>Book Now</button>
+              {success && <p className="success-msg">Reservation created! Redirecting to payment...</p>}
+              <button type="submit" className="btn btn-primary full-width-button">Book Now</button>
             </form>
           </div>
         ) : (
@@ -99,12 +99,12 @@ const ReservationsList = () => {
   return (
     <div className="reservations-list">
       {reservations.length === 0 ? (
-        <p style={{ color: 'var(--text-light)' }}>No reservations yet. Search memorials to book a visit.</p>
+        <p className="empty-state">No reservations yet. Search memorials to book a visit.</p>
       ) : (
         reservations.map((r) => (
           <div key={r.id} className="reservation-item card">
             <img src={r.memorial_image} alt={r.memorial_name} />
-            <div>
+            <div className="reservation-item-body">
               <h3>{r.memorial_name}</h3>
               <p>Visitor: {r.visitor_name}</p>
               <p>Date: {new Date(r.reservation_date).toLocaleDateString()}</p>

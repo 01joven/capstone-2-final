@@ -3,14 +3,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg);
-  padding: 20px;
+  background: linear-gradient(180deg, #f7efe3 0%, #f1e7d8 100%);
+  padding: 24px;
 }
 
 .onboarding-card {
-  max-width: 500px;
+  max-width: 540px;
   width: 100%;
-  padding: 40px;
+  padding: 44px 36px;
   text-align: center;
 }
 
@@ -22,57 +22,67 @@
 }
 
 .step-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--border);
-  transition: all 0.3s;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(106, 71, 48, 0.22);
+  transition: all 0.3s ease;
 }
 
 .step-dot.active {
   background: var(--primary);
   width: 30px;
-  border-radius: 5px;
+  border-radius: 12px;
 }
 
 .onboarding-icon {
-  font-size: 3rem;
-  margin-bottom: 16px;
+  font-size: 3.2rem;
+  margin-bottom: 18px;
 }
 
 .onboarding-card h2 {
-  color: var(--primary);
+  color: var(--secondary);
   margin-bottom: 12px;
+  font-size: 1.8rem;
 }
 
 .onboarding-card p {
-  color: var(--text-light);
-  margin-bottom: 24px;
+  color: var(--text-muted);
+  margin-bottom: 26px;
+  line-height: 1.8;
 }
 
 .onboarding-features {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 14px;
   margin-bottom: 28px;
 }
 
 .onboarding-feature {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px;
-  background: var(--bg);
-  border-radius: 8px;
-  font-size: 0.9rem;
+  gap: 10px;
+  padding: 16px;
+  background: var(--surface-soft);
+  border-radius: 16px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
 .onboarding-actions {
   display: flex;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 14px;
   justify-content: center;
 }
 
 .onboarding-actions .btn {
-  min-width: 120px;
+  min-width: 140px;
+}
+
+@media (max-width: 680px) {
+  .onboarding-features {
+    grid-template-columns: 1fr;
+  }
 }
