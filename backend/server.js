@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
+const pool = require('./config/db');
+
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/users');
 const memorialRoutes = require('./routes/memorials');
@@ -17,6 +19,26 @@ app.use(express.json());
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Memorial Map API is running' });
+});
+
+app.get('/api/health/db', async (req, res) => {
+  const url = process.env.DATABASE_URL || '';
+  try {
+    const result = await pool.query('SELECT COUNT(*)::int AS count FROM users');
+    res.json({
+      status: 'ok',
+      users: result.rows[0].count,
+      dbHost: url.replace(/\/\/[^@]*@/, '//***@').split('?')[0],
+      hasJwtSecret: Boolean(process.env.JWT_SECRET),
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: 'error',
+      message: error.message,
+      code: error.code,
+      dbHost: url ? url.replace(/\/\/[^@]*@/, '//***@').split('?')[0] : '(DATABASE_URL not set)',
+    });
+  }
 });
 
 app.use('/api/auth', authRoutes);
